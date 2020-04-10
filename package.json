@@ -1,0 +1,30 @@
+{
+  "name": "museum-id",
+  "version": "1.0.0",
+  "description": "Open source Show Data Museum in Indonesia via Command-CLI with API https://data.go.id/dataset/museum-indonesia",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maulana20/museum-id.git"
+  },
+  "bin": {
+    "museum": "index.js",
+    "museum-cli": "index.js"
+  },
+  "keywords": [
+    "museum"
+  ],
+  "author": "Maulana Saputra",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maulana20/museum-id/issues"
+  },
+  "homepage": "https://github.com/maulana20/museum-id#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "meow": "^6.1.0"
+  }
+}
