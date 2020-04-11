@@ -25,6 +25,7 @@
   "homepage": "https://github.com/maulana20/museum-id#readme",
   "dependencies": {
     "axios": "^0.19.2",
+    "cli-table3": "^0.6.0",
     "meow": "^6.1.0"
   }
 }

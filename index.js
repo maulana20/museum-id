@@ -1,5 +1,13 @@
+const Table = require('cli-table3');
+
 const cli = require('./utils/cli.js');
 const museum = require('./data/museum.js');
+
+const {
+	single,
+	singleStates,
+	style
+} = require('./utils/table_museum.js');
 
 const [input] = cli.input;
 const rainbow = cli.flags.rainbow;
@@ -10,7 +18,7 @@ const name = cli.flags.name;
 	
 	const data = input === 'data' ? true : false;
 	const region = input === 'region' ? true : false;
+	const table = new Table({ head: singleStates, style, chars: {} })
 	
-	console.log(input, data, name);
-	museum(data, name);
+	museum(table, data, name);
 })();
