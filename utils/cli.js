@@ -16,29 +16,35 @@ module.exports = meow(`
 		-det,  --detail           get detail by sort number
 
 	Examples
-		$ museum data --name "wayang"
+		$ museum data --name="wayang"
 		data museum wayang
 		
-		$ museum data --name "wayang" --detail=2
+		$ museum data --name="wayang" --detail=2
 		detail museum wayang by sort number
 		
-		$ museum data --province "010000"
+		$ museum data --province="010000"
 		data museum by code province
 		
-		$ museum data --province "010000" --detail=4
+		$ museum data --province="010000" --detail=4
 		detail museum province by sort number
 		
-		$ museum data --city "016200"
+		$ museum data --city="016200"
 		data museum by code city
 		
-		$ museum data --city "016200" --detail=6
+		$ museum data --city="016200" --detail=6
 		data museum city by sort number
 		
-		$ museum data --district "016001"
+		$ museum data --district="016001"
 		data museum by code district
 		
-		$ museum data --district "016001" --detail=1
+		$ museum data --district="016001" --detail=1
 		data museum district by sort number
+		
+		$ museum region
+		list province
+		
+		$ museum region --code="010000"
+		list region by code
 `, {
 	alias: {
 		name: {
@@ -60,6 +66,11 @@ module.exports = meow(`
 			type: 'string',
 			default: '',
 			alias: 'dist'
+		},
+		code: {
+			type: 'string',
+			default: '',
+			alias: 'code'
 		},
 		detail: {
 			type: 'number',
