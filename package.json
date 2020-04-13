@@ -11,8 +11,7 @@
     "url": "git+https://github.com/maulana20/museum-id.git"
   },
   "bin": {
-    "museum": "index.js",
-    "museum-cli": "index.js"
+    "museum": "index.js"
   },
   "keywords": [
     "museum"
