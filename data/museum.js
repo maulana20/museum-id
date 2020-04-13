@@ -1,9 +1,9 @@
 const API_MUSEUM = require('../api/api_museum.js');
 
 module.exports = async (
-	table, data, name, profile, province, city, district
+	table, data, name, profile, province, city, district, detail
 ) => {
-	if (data) {
+	if (data && (name || profile || province || city || district)) {
 		var response = null
 		
 		if (name) response = await API_MUSEUM.getName(name)
@@ -22,6 +22,25 @@ module.exports = async (
 			])
 		})
 		
-		console.log(table.toString())
+		if ((name || province || city || district) && detail) {
+			// nb : buat table sendiri untuk detail
+			const Table = require('cli-table3');
+			const table = new Table({ head: [ `#`, `nama`, `deskripsi` ], style: { head: ['cyan'] }, chars: {} })
+			
+			response = await API_MUSEUM.getProfile(result[detail-1].museum_id)
+			result = JSON.parse(response.replace(/^\ufeff/g,"")).data[0]
+			
+			Object.keys(result).map((data, index) => {
+				table.push([
+				index + 1,
+				data,
+				result[data]
+				])
+			})
+			
+			console.log(table.toString())
+		} else {
+			console.log(table.toString())
+		}
 	}
 }

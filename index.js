@@ -16,6 +16,7 @@ const profile = cli.flags.profile;
 const province = cli.flags.province;
 const city = cli.flags.city;
 const district = cli.flags.district;
+const detail = cli.flags.detail;
 
 (async () => {
 	input === 'help' && (await cli.showHelp(0));
@@ -24,5 +25,5 @@ const district = cli.flags.district;
 	const region = input === 'region' ? true : false;
 	const table = new Table({ head: single, style, chars: {} })
 	
-	museum(table, data, name, profile, province, city, district);
+	museum(table, data, name, profile, province, city, district, detail);
 })();
