@@ -12,8 +12,14 @@ Open source Show Data Museum in Indonesia via Command-CLI with API https://data.
 | Data Kabupaten/Kota Berdasarkan Provinsi  | In Progress |
 | Data Kecamatan Berdasarkan Kabupaten/Kota  | In Progress |
 
+### Langkah awal
+#### Ambil beberapa library
+```js
+npm install
+```
+
 ### Museum Data
-#### pembantu
+#### info bantuan
 ```js
 node index.js help
 ```

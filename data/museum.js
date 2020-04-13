@@ -1,7 +1,8 @@
 const API_MUSEUM = require('../api/api_museum.js');
+const Table = require('cli-table3');
 
 module.exports = async (
-	table, data, name, profile, province, city, district, detail
+	data, name, profile, province, city, district, detail
 ) => {
 	if (data && (name || profile || province || city || district)) {
 		var response = null
@@ -14,29 +15,32 @@ module.exports = async (
 		
 		var result = JSON.parse(response.replace(/^\ufeff/g,"")).data
 		
-		result.map((data, index) => {
-			table.push([
-				index + 1,
-				data.nama,
-				data.alamat_jalan + ' ' + data.desa_kelurahan + ' ' + data.kecamatan + ' ' + data.kabupaten_kota + ' ' + data.propinsi,
-			])
-		})
+		const table = new Table({ head: [ `#`, `nama`, `alamat` ], style: { head: ['cyan'] }, chars: {} })
 		
-		if ((name || province || city || district) && detail) {
-			// nb : buat table sendiri untuk detail
-			const Table = require('cli-table3');
-			const table = new Table({ head: [ `#`, `nama`, `deskripsi` ], style: { head: ['cyan'] }, chars: {} })
-			
-			response = await API_MUSEUM.getProfile(result[detail-1].museum_id)
-			result = JSON.parse(response.replace(/^\ufeff/g,"")).data[0]
-			
-			Object.keys(result).map((data, index) => {
+		if (result) {
+			result.map((data, index) => {
 				table.push([
-				index + 1,
-				data,
-				result[data]
+					index + 1,
+					data.nama,
+					data.alamat_jalan + ' ' + data.desa_kelurahan + ' ' + data.kecamatan + ' ' + data.kabupaten_kota + ' ' + data.propinsi,
 				])
 			})
+		}
+		
+		if ((name || province || city || district) && detail) {
+			const table = new Table({ head: [ `#`, `nama`, `deskripsi` ], style: { head: ['cyan'] }, chars: {} })
+			
+			var result = result[detail-1]
+			
+			if (result) {
+				Object.keys(result).map((data, index) => {
+					table.push([
+					index + 1,
+					data,
+					result[data]
+					])
+				})
+			}
 			
 			console.log(table.toString())
 		} else {
