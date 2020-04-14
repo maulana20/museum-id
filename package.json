@@ -1,6 +1,6 @@
 {
   "name": "museum-id",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Open source Show Data Museum in Indonesia via Command-CLI with API https://data.go.id/dataset/museum-indonesia",
   "main": "index.js",
   "scripts": {
