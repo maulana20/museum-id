@@ -11,10 +11,21 @@
     "url": "git+https://github.com/maulana20/museum-id.git"
   },
   "bin": {
-    "museum": "index.js"
+    "museum": "index.js",
+    "museum-id": "index.js",
+    "museum-cli": "index.js"
   },
   "keywords": [
-    "museum"
+    "museum",
+    "museum-cli",
+    "museum-id",
+    "museum-indonesia"
+  ],
+  "files": [
+    "index.js",
+    "utils/*",
+    "api/*",
+    "data/*"
   ],
   "author": "Maulana Saputra",
   "license": "MIT",

@@ -49,7 +49,7 @@ node index.js data --city="016200"
 
 #### Menampilkan Data Detail Sesuai No Urut Pada Museum Berdasarkan Kota
 ```js
-node index.js data --city "016200" --detail=6
+node index.js data --city="016200" --detail=6
 ```
 
 ![museum-city-detail](https://github.com/maulana20/museum-id/blob/master/screen/museum-city-detail.PNG)
@@ -70,14 +70,14 @@ node index.js data --district="016001" --detail=1
 
 #### Menampilkan Data Pencarian Berdasarkan Nama
 ```js
-node index.js data --name "wayang"
+node index.js data --name="wayang"
 ```
 
 ![museum-name](https://github.com/maulana20/museum-id/blob/master/screen/museum-name.PNG)
 
 #### Menampilkan Data Detail Sesuai No Urut Pada Museum Berdasarkan Nama
 ```js
-node index.js data --name "wayang" --detail=2
+node index.js data --name="wayang" --detail=2
 ```
 
 ![museum-name-detail](https://github.com/maulana20/museum-id/blob/master/screen/museum-name-detail.PNG)
@@ -93,7 +93,7 @@ node index.js region
 #### Menampilkan Data Seluruh Kabupaten
 catatan = code => kode wilayah pada data provinsi
 ```js
-node index.js region --code=010000
+node index.js region --code="010000"
 ```
 
 ![region-city](https://github.com/maulana20/museum-id/blob/master/screen/region-city.PNG)
@@ -101,7 +101,7 @@ node index.js region --code=010000
 #### Menampilkan Data Seluruh Kecamatan
 catatan = code => kode wilayah pada data kabupaten
 ```js
-node index.js region --code=016200
+node index.js region --code="016200"
 ```
 
 ![region-district](https://github.com/maulana20/museum-id/blob/master/screen/region-district.PNG)
