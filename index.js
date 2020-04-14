@@ -14,7 +14,6 @@ const Region = require('./data/region.js');
 const [input] = cli.input;
 
 const name = cli.flags.name;
-const profile = cli.flags.profile;
 const province = cli.flags.province;
 const city = cli.flags.city;
 const district = cli.flags.district;
@@ -27,6 +26,6 @@ const code = cli.flags.code;
 	const data = input === 'data' ? true : false;
 	const region = input === 'region' ? true : false;
 	
-	Museum(data, name, profile, province, city, district, detail);
+	Museum(data, name, province, city, district, detail);
 	Region(region, code);
 })();

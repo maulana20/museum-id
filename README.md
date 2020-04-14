@@ -1,110 +1,96 @@
 # museum-id
 Open source Show Data Museum in Indonesia via Command-CLI with API https://data.go.id/dataset/museum-indonesia
 
-| Pencarian  | Result  |
-|---|---|
-| Profil Museum Indonesia  | Ok |
-| Museum Indonesia Berdasarkan Provinsi  | Ok |
-| Museum Indonesia Berdasarkan Kabupaten/Kota  | Ok |
-| Museum Indonesia Berdasarkan Kecamatan  | Ok |
-| Museum Indonesia Berdasarkan Nama  | Ok |
-| Data Provinsi  | Ok |
-| Data Kabupaten/Kota Berdasarkan Provinsi  | Ok |
-| Data Kecamatan Berdasarkan Kabupaten/Kota  | Ok |
+[x] Profil Museum Indonesia
+[x] Museum Indonesia Berdasarkan Provinsi
+[x] Museum Indonesia Berdasarkan Kabupaten/Kota
+[x] Museum Indonesia Berdasarkan Kecamatan
+[x] Museum Indonesia Berdasarkan Nama
+[x] Data Provinsi
+[x] Data Kabupaten/Kota Berdasarkan Provinsi
+[x] Data Kecamatan Berdasarkan Kabupaten/Kota
 
-### Langkah awal
-#### Ambil beberapa library
+### Instalasi
+#### Install paket museum-id pada global
 ```js
-npm install
+npm install -g museum-id
+```
+#### Install paket runner (eksekusi) dengan npx
+```js
+npm install -g npx
+```
+#### Eksekusi paket museum-id dengan npx
+```js
+npx museum-id
+```
+
+### Menampilkan Tentang Aplikasi Dan Info Bantuan
+```js
+museum help
 ```
 
 ### Museum Data Informasi
-#### Menampilkan Info Bantuan
-```js
-node index.js help
-```
-
-![help](https://github.com/maulana20/museum-id/blob/master/screen/help.PNG)
+Merupakan data informasi mengenai semua museum yang ada di indonesia.
 
 #### Menampikan Data Pencarian Berdasarkan Provinsi
+##### Pencarian
 ```js
-node index.js data --province="010000"
+museum data --province="<kode_wilayah>"
+```
+##### Detail Sesuai Dengan No Urut
+```js
+museum data --province="<kode_wilayah>" --detail=<no_urut>
 ```
 
-![museum-province](https://github.com/maulana20/museum-id/blob/master/screen/museum-province.PNG)
-
-#### Menampilkan Data Detail Sesuai No Urut Pada Museum Berdasarkan Provinsi
+#### Menampilkan Data Pencarian Berdasarkan Kabupaten/Kota
+##### Pencarian
 ```js
-node index.js data --province="010000" --detail=4
+museum data --city="<kode_wilayah>"
 ```
-
-![museum-province-detail](https://github.com/maulana20/museum-id/blob/master/screen/museum-province-detail.PNG)
-
-#### Menampilkan Data Pencarian Berdasarkan Kota
+##### Detail Sesuai Dengan No Urut
 ```js
-node index.js data --city="016200"
+museum data --city="<kode_wilayah>" --detail=<no_urut>
 ```
-
-![museum-city](https://github.com/maulana20/museum-id/blob/master/screen/museum-city.PNG)
-
-#### Menampilkan Data Detail Sesuai No Urut Pada Museum Berdasarkan Kota
-```js
-node index.js data --city="016200" --detail=6
-```
-
-![museum-city-detail](https://github.com/maulana20/museum-id/blob/master/screen/museum-city-detail.PNG)
 
 #### Menampilkan Data Pencarian Berdasarkan Kecamatan
+##### Pencarian
 ```js
-node index.js data --district="016001"
+museum data --district="<kode_wilayah>"
 ```
-
-![museum-district](https://github.com/maulana20/museum-id/blob/master/screen/museum-district.PNG)
-
-#### Menampilkan Data Detail Sesuai No Urut Pada Museum Berdasarkan Kecamatan
+##### Detail Sesuai Dengan No Urut
 ```js
-node index.js data --district="016001" --detail=1
+museum data --district="<kode_wilayah>" --detail=<no_urut>
 ```
-
-![museum-district-detail](https://github.com/maulana20/museum-id/blob/master/screen/museum-district-detail.PNG)
 
 #### Menampilkan Data Pencarian Berdasarkan Nama
+##### Pencarian
 ```js
-node index.js data --name="wayang"
+museum data --name="<kode_wilayah>"
 ```
-
-![museum-name](https://github.com/maulana20/museum-id/blob/master/screen/museum-name.PNG)
-
-#### Menampilkan Data Detail Sesuai No Urut Pada Museum Berdasarkan Nama
+##### Detail Sesuai Dengan No Urut
 ```js
-node index.js data --name="wayang" --detail=2
+museum data --name="<kode_wilayah>" --detail=<no_urut>
 ```
-
-![museum-name-detail](https://github.com/maulana20/museum-id/blob/master/screen/museum-name-detail.PNG)
 
 ### Museum Data Wilayah
-#### Menampilkan Data Seluruh Provinsi
+Merupakan data wilayah yang mencakup provinsi, kabupaten/kota, kecamatan. Perlu di ketahui data wilayah ini memiliki kode diantaranya :
+- <b>kode wilayah</b> merupakan kode sesuai pada nama wilayah yang di tuju
+- <b>kode induk</b> merupakan induk pada kode wilayah
+
+catatan => kode wilayah bisa berupa kode diantaranya : provinsi, kabupaten/kota, dan kecamatan
+
+#### Menampilkan Data Wilayah Awal <Provinsi>
 ```js
-node index.js region
+museum region
 ```
 
-![region-province](https://github.com/maulana20/museum-id/blob/master/screen/region-province.PNG)
-
-#### Menampilkan Data Seluruh Kabupaten
-catatan = code => kode wilayah pada data provinsi
+#### Menampilkan Data Wilayah Berdasarkan Kode Wilayah
 ```js
-node index.js region --code="010000"
+museum region --code="<kd_wilayah>"
 ```
 
-![region-city](https://github.com/maulana20/museum-id/blob/master/screen/region-city.PNG)
-
-#### Menampilkan Data Seluruh Kecamatan
-catatan = code => kode wilayah pada data kabupaten
-```js
-node index.js region --code="016200"
-```
-
-![region-district](https://github.com/maulana20/museum-id/blob/master/screen/region-district.PNG)
+### Tampilan
+[![help](./screen/help.PNG)](./../../)
 
 ### Author
 

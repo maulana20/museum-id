@@ -41,7 +41,7 @@ module.exports = meow(`
 		data museum district by sort number
 		
 		$ museum region
-		list province
+		list region show province
 		
 		$ museum region --code="010000"
 		list region by code
