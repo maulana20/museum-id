@@ -1,14 +1,14 @@
 # museum-id
-Open source Show Data Museum in Indonesia via Command-CLI with API https://data.go.id/dataset/museum-indonesia
+Open source Show Data Museum in Indonesia via Command-CLI with [API](https://data.go.id/dataset/museum-indonesia)
 
-[x] Profil Museum Indonesia
-[x] Museum Indonesia Berdasarkan Provinsi
-[x] Museum Indonesia Berdasarkan Kabupaten/Kota
-[x] Museum Indonesia Berdasarkan Kecamatan
-[x] Museum Indonesia Berdasarkan Nama
-[x] Data Provinsi
-[x] Data Kabupaten/Kota Berdasarkan Provinsi
-[x] Data Kecamatan Berdasarkan Kabupaten/Kota
+- [x] Profil Museum Indonesia
+- [x] Museum Indonesia Berdasarkan Provinsi
+- [x] Museum Indonesia Berdasarkan Kabupaten/Kota
+- [x] Museum Indonesia Berdasarkan Kecamatan
+- [x] Museum Indonesia Berdasarkan Nama
+- [x] Data Provinsi
+- [x] Data Kabupaten/Kota Berdasarkan Provinsi
+- [x] Data Kecamatan Berdasarkan Kabupaten/Kota
 
 ### Instalasi
 #### Install paket museum-id pada global
@@ -24,7 +24,7 @@ npm install -g npx
 npx museum-id
 ```
 
-### Menampilkan Tentang Aplikasi Dan Info Bantuan
+### Menampilkan Tentang Aplikasi Dan Informasi Bantuan
 ```js
 museum help
 ```
@@ -89,8 +89,22 @@ museum region
 museum region --code="<kd_wilayah>"
 ```
 
-### Tampilan
+### Lampiran Pada Tampilan
+#### Informasi Bantuan
+
 [![help](./screen/help.PNG)](./../../)
+
+#### Pencarian Berdasarkan Kabupaten/Kota
+
+[![museum-city](./screen/museum-city.PNG)](./../../)
+
+#### Detail Sesuai Dengan No Urut
+
+[![museum-city-detail](./screen/museum-city-detail.PNG)](./../../)
+
+#### Menampilkan Data Wilayah Berdasarkan Kode Wilayah
+
+[![region-city](./screen/region-city.PNG)](./../../)
 
 ### Author
 
